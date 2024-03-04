@@ -1,398 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приложение подарки</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
 </head>
-
 <body>
     <header>
-        <!-- navbar -->
-        <nav>
-            <div class="logo">
-                Приложение подарки
-            </div>
-
-           
-
-            <div class="nav-icons">
-                <!-- Search Icon -->
-                <i class="bi bi-search"></i>
-                <!-- Cart Icon -->
-                <i class="bi bi-cart"></i>
-                <!-- user Icon -->
-                <i class="bi bi-person"></i>
-            </div>
-        </nav>
+        <h1>Приложение подарки</h1>
     </header>
-
     <main>
-
-        <aside class="date-container">
-            <h1 class="date-day">
-                <!-- Dynamic Date -->
-            </h1>
-        </aside>
-
-        <section class="landing-page">
-            <!-- background Image -->
-
-            <!-- AppName -->
-            <div class="landing-page-content">
-                <h1 class="landing-page-logo">_________
-
-                    <span>Подарки</span>
-                </h1>
-
-                <h2 class="quote">Это идеальный способ показать свою любовь</h2>
-                <p> Подарки всегда делают людей лучше, счастливее и отзывчивее.
-                    <br>
-                    Подарки - это то, что хочется вручать людям по собственному желанию, для доставления удовольствия и пользы другим людям
-                </p>
-
-
-                <!-- <button>Explore</button> -->
-                <a class="explore-btn" href="#">Кнопка - переходит на инфу создания ПП</a>
-            </div>
-
+        <section id="filters">
+            <h2>Выберите параметры подарка:</h2>
+            <label for="age">Возраст:</label>
+            <select id="age">
+                <option value="0-10">0-10 лет</option>
+                <option value="11-20">11-20 лет</option>
+                <option value="21-30">21-30 лет</option>
+                <option value="31-40">31-40 лет</option>
+                <option value="41-50">41-50 лет</option>
+                <option value="51+">51+ лет</option>
+            </select>
+            <label for="recipient">Для кого:</label>
+            <select id="recipient">
+                <option value="Мужчины">Мужчины</option>
+                <option value="Женщины">Женщины</option>
+                <option value="Дети">Дети</option>
+                <option value="Пары">Пары</option>
+                <option value="Друзья">Друзья</option>
+            </select>
+            <label for="occasion">Повод:</label>
+            <select id="occasion">
+                <option value="День рождения">День рождения</option>
+                <option value="Юбилей">Юбилей</option>
+                <option value="Свадьба">Свадьба</option>
+                <option value="Новый год">Новый год</option>
+                <option value="Другой">Другой</option>
+            </select>
+            <label for="interests">Интересы получателя:</label>
+            <select id="interests">
+                <option value="Книги">Книги</option>
+                <option value="Спорт">Спорт</option>
+                <option value="Технологии">Технологии</option>
+                <option value="Путешествия">Путешествия</option>
+                <option value="Мода">Мода</option>
+            </select>
+            <button onclick="findGifts()">Подобрать</button>
         </section>
-
-        <section class="carousel-bestseller-container">
-            <h3 class="carousel-header">Идеально подходит для любимого человека</h3>
-            <div class="carousel-container">
-                <div class="carousel-container">
-                    <div class="carousel-text">
-                        <h3 >Send a <span> Video Message (Вставить видео сбора набора ПП)</span> with
-                            <br>
-                              QR Code Подарка</h3>
-                             <a href="#" class="explore-btn" style="margin: 10px auto;">Кнопка "Перейти на видео сбора ПП"</a>
-                    </div>
-                    <img src="./assets/images/lady.png" alt="">
-
-                </div>
-            </div>
-            <div class="carousel-btns">
-                <a href="#" class="btns"></a>
-                <a href="#" class="btns"></a>
-                <a href="#" class="btns"></a>
-                <a href="#" class="btns"></a>
-                <a href="#" class="btns"></a>
-                <a href="#" class="btns"></a>
-            </div>
-
-
-            <div class="bestsellers">
-                <div class="bestsellers-header">
-                    <h4>Best Seller</h4>
-                    <a href="#">See All</a>
-                </div>
-
-                <div class="bestsellers-content">
-
-                    <div class="bestseller-item">
-                        <img class="bestseller-item-img"
-                            src="images/1.jpg"
-                            alt="">
-                        <h5>Подарок1</h5>
-                        <div class="priceandFav">
-                            <span>100$ (состав подарка) </span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-
-                    <div class="bestseller-item">
-                        <img class="bestseller-item-img"
-                            src="images/2.jpg" alt="">
-                        <h5>Подарок2</h5>
-                        <div class="priceandFav">
-                            <span>100$ (состав подарка) </span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-
-                    <div class="bestseller-item">
-                        <img class="bestseller-item-img"
-                            src="images/3.jpg"
-                            alt="">
-                        <h5>VПодарок3</h5>
-                        <div class="priceandFav">
-                            <span>100$ (состав подарка) </span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-
-                    <div class="bestseller-item">
-                        <img class="bestseller-item-img"
-                            src="images/44.jpg" alt="">
-                        <h5>Подарок4</h5>
-                        <div class="priceandFav">
-                            <span>100$ (состав подарка) </span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="newarrival">
-                <div class="newarrival-header">
-                    <h4>Новое поступление</h4>
-                    <span><a href="#">See All</a></span>
-                </div>
-
-                <div class="newarrival-content">
-
-                    <div class="newarrival-item">
-                        <img class="newarrival-item-img"
-                            src="images/love.jpg" alt="">
-                        <h5>New_love Подарок</h5>
-                        <div class="priceandFav">
-                            <span>110$</span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-                    <div class="newarrival-item">
-                        <img class="newarrival-item-img"
-                            src="images/нг.jpg" alt="">
-                        <h5>New_HY Подарок</h5>
-                        <div class="priceandFav">
-                            <span>110$(сотав подарка)</span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-
-                    <div class="newarrival-item">
-                        <img class="newarrival-item-img"
-                            src="images/6.jpg"
-                            alt="">
-                        <h5>New VipПодарок</h5>
-                        <div class="priceandFav">
-                            <span>110$ (состав подарка)</span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-
-                    <div class="newarrival-item">
-                        <img class="newarrival-item-img"
-                            src="images/7.jpg"
-                            alt="">
-                        <h5>New VIPПодарок(состав подарка)</h5>
-                        <div class="priceandFav">
-                            <span>110$</span>
-                            <i class="bi bi-heart"></i>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="little-intro">
-            <div class="little-intro-text">
-                <h3>Теперь вы можете подобрать свой подарок</h3>
-                <p>С помощью следующих трех шагов вы можете создать <br>
-                   свой неповторимый подарок
-                </p>
-
-                <a href="" class="explore-btn">Кнопа подбора подарка (переход на другую страницу)</a>
-            </div>
-            <img class="little-intro-img"
-                src="images/5.jpg" alt="">
-        </section>
-
-        <section class="decoration-sec">
-            <h3>Оформление</h3>
-            <span>Добавьте нотку элегантности и оформите сами подарок </span>
-
-            <div class="decoration-stuffs">
-                <div class="decoration-item">
-                    <img class="decoration-item-img"
-                        src="images/love.jpg"
-                        alt="">
-                    <h4> Оформление подарка №1 <span>10$</span></h4>
-                    <div class="stuff-name">
-                        <div class="heading-rating">
-                            <h5>Сердца</h5>
-                            <div class="ratings">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                        </div>
-                        <i class="bi bi-heart"></i>
-                    </div>
-                    <h5 class="product-info-heading">Информация об оформлении</h5>
-                    <p class="product-info">
-                        Упаковочная бумага в сердца, милая открытка, ленца в виде сердец
-                    </p>
-
-                    <div class="addtocart-btn">
-                        <span>  Добавить в корзину</span>
-                        <div class="cart-icon">
-                            <!-- Cart Icon -->
-                            <i class="bi bi-bag"></i>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="decoration-item">
-                    <img class="decoration-item-img"
-                        src="images/kraft.jpg"
-                        alt="">
-                    <h4>Оформление подарка №1 <span>10$</span></h4>
-                    <div class="stuff-name">
-                        <div class="heading-rating">
-                            <h5>Крафт</h5>
-                            <div class="ratings">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                        </div>
-                        <i class="bi bi-heart"></i>
-                    </div>
-                    <h5 class="product-info-heading">Информация об оформлении</h5>
-                    <p class="product-info">
-                       Крафтовая упаковочная бумага, красная лента, бант и открытка 
-                    </p>
-
-                    <div class="addtocart-btn">
-                        <span>Добавить в корзину</span>
-                        <div class="cart-icon">
-                            <!-- Cart Icon -->
-                            <i class="bi bi-bag"></i>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="decoration-item">
-                    <img class="decoration-item-img"
-                        src="images/нг.jpg"
-                        alt="">
-                    <h4>Оформление подарка №3 <span>10$</span></h4>
-                    <div class="stuff-name">
-                        <div class="heading-rating">
-                            <h5>Новогоднее настроение</h5>
-                            <div class="ratings">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                        </div>
-                        <i class="bi bi-heart"></i>
-                    </div>
-                    <h5 class="product-info-heading">Информация об оформлении</h5>
-                    <p class="product-info">
-                        Новогодняя упаковочная бумага, декор елочка\снежинка, шишка, новогодняя открытка
-                    </p>
-
-                    <div class="addtocart-btn">
-                        <span>В корзину</span>
-                        <div class="cart-icon-bought">
-                            <!-- Cart Icon -->
-                            <i class="bi bi-bag-check"></i>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <h5 class="deliver-return-heading">
-                Доставка/возврат</h5>
-            <p class="deliver-return-text">Доставка курьером либо по почте \ принимается возврат при наличии дефекта
-            </p>
+        <section id="gifts">
+            <h2>Подходящие подарки:</h2>
+            <ul id="giftList">
+                <!-- Подарки будут добавлены динамически с помощью JavaScript -->
+            </ul>
         </section>
     </main>
-
     <footer>
-        <div class="connect-with-us footer-items">
-            <h3>Связаться с нами</h3>
-            <p><i class="bi bi-telephone"></i>80(29)2935411</p>
-            <p><i class="bi bi-envelope"></i>yanasu551@gmail.com</p>
-            <div class="social-icons">
-                <a href="#" class="twitter social-items">
-                    <i class="bi bi-twitter-x"></i>
-                </a>
-
-                <a href="#" class="instagram social-items">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="#" class="facebook social-items">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#" class="github social-items">
-                    <i class="bi bi-github"></i>
-                </a>
-
-            </div>
-
-        </div>
-<!-- 
-        <div class="about footer-items">
-            <h3>About</h3>
-            <p>Home</p>
-            <p>About Us</p>
-            <p>Connect us</p>
-            <p>Terms & Conditions</p>
-        </div>
-
-        <div class="site-map footer-items">
-            <h3>Site Map</h3>
-            <p>Best Seller</p>
-            <p>New Arrival</p>
-            <p>Customize Bouquet</p>
-            <p>Categories</p>
-        </div>
-
-        <div class="my-account footer-items">
-            <h3>My Account</h3>
-            <p>Login</p>
-            <p>My Profile</p>
-            <p>Basket</p>
-            <p>My Orders</p>
-        </div> -->
-
-        <div class="newsletter">
-            <div class="newsletter-content">
-                <h3>новости новинок</h3>
-                <p>Подпишитесь на эксклюзивные предложения, новую коллекцию, последние новости и многое другое.</p>
-
-                <div class="newsletter-input">
-
-                    <input type="text" name="" id="" placeholder="Enter Your Email">
-                    <!-- Send Icon -->
-                    <i class="bi bi-send-fill"></i>
-                </div>
-
-            </div>
-        </div>
+        <p>Автор: &copy; Суржикова Я.В.</p>
     </footer>
-
-    <script src="./assets/script/script.js"></script>
 </body>
-
 </html>
